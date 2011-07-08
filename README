@@ -1,0 +1,8 @@
+This script builds a universal (i386, ppc, x86_64) version of the HDF5
+libraries and include files for Mac OS X.  It does do by running three
+separate build and install steps, then using lipo to combine the
+libraries and executables, and wrapping the header files in
+architecture-detecting #ifdefs.  I haven't tested it beyond using it
+to build h5py and testing its builtin tests on each architecture, and
+then using it to run the CellProfiler unit tests, many of which rely
+on h5py.
