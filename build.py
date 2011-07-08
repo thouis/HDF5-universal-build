@@ -34,6 +34,8 @@ for arch in 'ppc i386 x86_64'.split():
     system('./configure --prefix=%s --enable-threadsafe  --with-pthread' % DESTPATH)
     print "MAKE"
     system('make')
+    print "TEST"
+    system('make test')
 
 print "INSTALL"
 for arch in 'ppc i386 x86_64'.split():
