@@ -11,3 +11,7 @@ To use this script, downlaod the hdf5-1.8.7.tar.bz2 file, then run
   % python build.py
 
 It will install in /usr/local/HDF5-universal.
+
+Note that the bin/h5cc and bin/h5redeploy commands are not properly
+handled by this script.  Nor are the lib/*.la and lib/libhdf5.settings
+files.
