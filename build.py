@@ -8,6 +8,7 @@ DESTPATH = "/usr/local/HDF5-universal"
 assert os.path.exists('hdf5-1.8.7.tar.bz2'), "Download hdf5-1.8.7.tar.bz2 into this directory, first"
 
 def system(command):
+    print command
     assert os.system(command) == 0, "COMMAND FAILED"
 
 system("sudo mkdir -p %s" % DESTPATH)
@@ -39,7 +40,6 @@ for arch in 'ppc i386 x86_64'.split():
 
 print "INSTALL"
 for arch in 'ppc i386 x86_64'.split():
-    continue
     build_dir = os.path.join(basedir, 'build_%s' % arch)
     os.chdir(os.path.join(build_dir, 'hdf5-1.8.7'))
     system('make install')
@@ -84,3 +84,4 @@ def wrap_include(f):
 os.chdir(os.path.join(DESTPATH, 'include'))
 for f in os.listdir(os.path.join('.', 'i386')):
     wrap_include(f)
+print "DONE."
